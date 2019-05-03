@@ -77,6 +77,9 @@ public class ModMoto extends JFrame {
 	private JLabel lblHistorialDelTaller;
 	private JTextField tFAddComment;
 	
+	// Objetos del panel extra
+	private JPanel extrasPane;
+	
 	
 	//Constructores
 	public ModMoto(Window w, Vehiculo v) {
@@ -229,7 +232,7 @@ public class ModMoto extends JFrame {
 		//icnMarca = new ImageIcon("pirelli.jpg");
 		lFMarca = new JLabel();
 		lFMarca.setBounds(292, 34, 117, 81);
-		if(m.getMarFrontWheel().equalsIgnoreCase("0")) { //Peta el programa
+		if(m.getMarFrontWheel().equalsIgnoreCase("0")) {
 			lFMarca.setText("Icn Marca");
 			lFMarca.setHorizontalAlignment(SwingConstants.CENTER);
 		} else {
@@ -251,6 +254,9 @@ public class ModMoto extends JFrame {
 		JTextField tFMarcaFrontWheel = new JTextField();
 		pFrontWheel.add(tFMarcaFrontWheel);
 		tFMarcaFrontWheel.setColumns(10);
+		if(!m.getMarFrontWheel().equals("")) {
+			tFMarcaFrontWheel.setText(m.getMarFrontWheel());
+		}
 		
 		lblModeloFrontWheel = new JLabel("Modelo");
 		pFrontWheel.add(lblModeloFrontWheel);
@@ -310,15 +316,15 @@ public class ModMoto extends JFrame {
 		tallerPane.setLayout(null);
 		
 		lblHistorialDelTaller = new JLabel("Historial del taller:");
-		lblHistorialDelTaller.setBounds(10, 11, 89, 14);
+		lblHistorialDelTaller.setBounds(10, 11, 114, 14);
 		tallerPane.add(lblHistorialDelTaller);
 		
 		JLabel lblFechaVisita = new JLabel("Fecha visita:");
-		lblFechaVisita.setBounds(134, 11, 80, 14);
+		lblFechaVisita.setBounds(122, 11, 81, 14);
 		tallerPane.add(lblFechaVisita);
 		
 		JFormattedTextField tFFechaVisita = new JFormattedTextField();
-		tFFechaVisita.setBounds(224, 8, 95, 20);
+		tFFechaVisita.setBounds(204, 8, 95, 20);
 		tallerPane.add(tFFechaVisita);
 		
 		tFAddComment = new JTextField();
@@ -327,12 +333,19 @@ public class ModMoto extends JFrame {
 		tFAddComment.setColumns(10);
 		
 		JButton btnAddComment = new JButton("Comentar");
-		btnAddComment.setBounds(329, 7, 80, 23);
+		btnAddComment.setBounds(304, 7, 105, 23);
 		tallerPane.add(btnAddComment);
 		
 		JTextPane tPHistorial = new JTextPane();
+		tPHistorial.setEditable(false);
 		tPHistorial.setBounds(10, 66, 399, 146);
 		tallerPane.add(tPHistorial);
+		
+		//ExtrasPane (Panel donde veremos los extras de la moto) Ej. Tubo de escape, latiguillos, ...
+		
+		extrasPane = new JPanel();
+		tabPane.addTab("Extras", extrasPane);
+		extrasPane.setLayout(null);
 	}
 	// Getters y Setters
 	public JTextField getTFMarca() {

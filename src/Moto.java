@@ -3,12 +3,15 @@ public class Moto extends Vehiculo{
 	//Atributos de la clase moto
 	private String marFrontWheel;
 	private String modFrontWheel;
+	private String tamanyoFrontWheel;
 	private int ultPrecioFrontWheel;
 	private String marRearWheel;
 	private String modRearWheel;
+	private String tamanyoRearWheel;
 	private int ultPrecioRearWheel;
 	private String modTuboEscape;
 	private String rutaImg;
+	private String taller;
 	//Constructores
 	public Moto() {
 		super.tipo = "Motocicleta";
@@ -17,9 +20,8 @@ public class Moto extends Vehiculo{
 		super.tipo = "Motocicleta";
 		super.marca = mar;
 		super.modelo = mod;
-		this.marFrontWheel = "0";
 	}
-	// Constructor al que se le pasan todos los datos de la super-clase
+	// Constructor al que se le pasan todos los datos de la super-clase -- Este constructor es el que ejecuta el programa por defecto
 	public Moto(String mar, String mod, String mat, String fechaMat, String tipoMot, int kms) {
 		super.tipo = "Motocicleta";
 		super.marca = mar;
@@ -28,7 +30,13 @@ public class Moto extends Vehiculo{
 		super.fechaMatriculacion = fechaMat;
 		super.tipoMotor = tipoMot;
 		super.kilometros = kms;
+		//Datos para una moto de prueba
 		this.marFrontWheel = "Pirelli";
+		this.modFrontWheel = "Diablo BSB";
+		this.tamanyoFrontWheel = "120/55";
+		this.marRearWheel = "Pirelli";
+		this.modRearWheel = "Diablo BSB";
+		this.tamanyoRearWheel = "190/55";
 		this.describe();
 	}
 	//Este constructor tan solo servirá para pruebas, ya que jamás se podrá crear una moto con todos los datos de inicio

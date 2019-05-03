@@ -19,6 +19,5 @@ public class Main {
 		// Llamamos a nuestra clase Window
 		Window w1 = new Window();
 		w1.setVisible(true); // Hacemos visible la ventana
-		
 	}
 }
