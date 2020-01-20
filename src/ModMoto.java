@@ -125,7 +125,7 @@ public class ModMoto extends JFrame {
 		lblModelo.setHorizontalAlignment(SwingConstants.CENTER);
 		infoPane.add(lblModelo);
 		
-		JTextField tFModelo = new JTextField();
+		tFModelo = new JTextField();
 		tFModelo.setBounds(95, 40, 100, 20);		
 		tFModelo.setText(m.getModelo());
 		tFModelo.setEnabled(false);
@@ -198,7 +198,7 @@ public class ModMoto extends JFrame {
 		};
 		btnModificarGen.addActionListener(modificarGeneral);
 		// -------- Botón para cambiar la imagen del vehículo -----------------------
-		JButton btnChangeImg = new JButton("A\u00F1adir/Cambiar foto");
+		JButton btnChangeImg = new JButton("Añadir/Cambiar foto");
 		btnChangeImg.setBounds(224, 161, 176, 23);
 		infoPane.add(btnChangeImg);
 		
@@ -377,14 +377,14 @@ public class ModMoto extends JFrame {
 	public void changeButtons(boolean tof) {
 		if(tof) {
 			getTFMarca().setEnabled(false);
-			//getTFModelo().setEnabled(false);
+			getTFModelo().setEnabled(false);
 			getTFMatricula().setEnabled(false);
 			getTFFechaMat().setEnabled(false);
 			getTFKms().setEnabled(false);
 			getButtonModificarGen().setEnabled(false);
 		}else {
 			getTFMarca().setEnabled(true);
-			//getTFModelo().setEnabled(true);
+			getTFModelo().setEnabled(true);
 			getTFMatricula().setEnabled(true);
 			getTFFechaMat().setEnabled(true);
 			getTFKms().setEnabled(true);
