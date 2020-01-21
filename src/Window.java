@@ -156,8 +156,12 @@ public class Window extends JFrame{
 			public void actionPerformed(ActionEvent ae){
 				if(listaV.get(0).getTipo().equals("Motocicleta")) {
 					modificarMoto(listaV);
-				}else {
+				}else if(listaV.get(0).getTipo().equals("Coche")) {
 					// TO-DO con las clases Coche y Camion
+				}else if(listaV.get(0).getTipo().equals("Coche")) {
+					
+				}else {
+					//JOptionPane.showConfirmDialog(this, "Esta opción parece que no está contemplada todavía, ponte en contacto con la siguiente dirección de correo y solicítala: mpmflash@gmail.com","Alert",JOptionPane.WARNING_MESSAGE);
 				}
 				hideWindow(true);
 			}
