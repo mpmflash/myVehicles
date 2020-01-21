@@ -161,7 +161,7 @@ public class Window extends JFrame{
 				}else if(listaV.get(0).getTipo().equals("Coche")) {
 					
 				}else {
-					//JOptionPane.showConfirmDialog(this, "Esta opción parece que no está contemplada todavía, ponte en contacto con la siguiente dirección de correo y solicítala: mpmflash@gmail.com","Alert",JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Esta opción parece que no está contemplada todavía, ponte en contacto con la siguiente dirección de correo y solicítala: mpmflash@gmail.com","Alert",JOptionPane.WARNING_MESSAGE);
 				}
 				hideWindow(true);
 			}
