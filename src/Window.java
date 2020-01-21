@@ -98,23 +98,6 @@ public class Window extends JFrame{
 			//for(int i=0; i<=listaV.size(); i++) {
 				
 			//}
-			
-			/*if(listaV.size() == 1) {
-				bAñadir.setBounds(10, 80, 180, 30);
-				//System.out.println(listaV.get(0).getTipo());
-				b1Veh.setBounds(10, 40, 180, 30);
-				b1Veh.setText(listaV.get(0).getTipo() + ": " + listaV.get(0).getMatricula());
-				b1Veh.setFont(txtNormal);
-				panel.add(b1Veh);
-			} else if (listaV.size() == 2) {
-				bAñadir.setBounds(10, 110, 180, 30);
-			} else if (listaV.size() == 3) {
-				bAñadir.setBounds(10, 140, 180, 30);
-			} else if (listaV.size() == 4) {
-				bAñadir.setBounds(10, 170, 180, 30);
-			} else {
-				bAñadir.setBounds(10, 200, 180, 30);
-			}*/
 			switch(listaV.size()) {
 			case 1:
 				b1Veh.setBounds(10, 40, 180, 30);
