@@ -184,6 +184,7 @@ public class ModMoto extends JFrame {
 			}
 		};
 		tBHabC.addActionListener(changeEnabledButtons);
+		
 		// -------- Botón para modificar el vehículo --------------------------------
 		btnModificarGen = new JButton("Modificar");
 		btnModificarGen.setBounds(10, 189, 185, 23);
@@ -197,6 +198,7 @@ public class ModMoto extends JFrame {
 			}
 		};
 		btnModificarGen.addActionListener(modificarGeneral);
+		
 		// -------- Botón para cambiar la imagen del vehículo -----------------------
 		JButton btnChangeImg = new JButton("Añadir/Cambiar foto");
 		btnChangeImg.setBounds(224, 161, 176, 23);
@@ -210,6 +212,7 @@ public class ModMoto extends JFrame {
 			}
 		};
 		btnChangeImg.addActionListener(changeImg);
+		
 		// -------- Botón para volver a la ventana principal de la app --------------
 		btnVolver = new JButton("Volver");
 		btnVolver.setBounds(275, 189, 80, 23);
