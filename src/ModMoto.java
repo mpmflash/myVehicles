@@ -36,6 +36,7 @@ public class ModMoto extends JFrame {
 	
 	//Atributos de la clase
 	private JTabbedPane tabPane;
+	private Moto motocicleta;
 	
 	// Objetos del panel info
 	private JPanel infoPane;
@@ -84,8 +85,8 @@ public class ModMoto extends JFrame {
 	//Constructores
 	public ModMoto(Window w, Vehiculo v) {
 		// Creamos la moto nueva con el vehículo que viene del programa en ejecución
-		Moto m = new Moto();
-		m = (Moto) v;
+		motocicleta = new Moto();
+		motocicleta = (Moto) v;
 		// Creación de la ventana
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setBounds(100, 100, 450, 300);
@@ -93,7 +94,7 @@ public class ModMoto extends JFrame {
 		JTabbedPane tabPane = new JTabbedPane();
 		tabPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		//contentPane.setLayout(new BorderLayout(0, 0));
-		this.setTitle("Modificar vehículo: "+ m.getMarca() + " " + m.getModelo() + " " + m.getMatricula() );
+		this.setTitle("Modificar vehículo: "+ motocicleta.getMarca() + " " + motocicleta.getModelo() + " " + motocicleta.getMatricula() );
 		this.setLocationRelativeTo(null); // Esto hace que se centre la ventana
 		this.setContentPane(tabPane);
 		// Creación de paneles para las pestañas
@@ -110,7 +111,7 @@ public class ModMoto extends JFrame {
 		
 		tFMarca = new JTextField();
 		tFMarca.setBounds(95, 10, 100, 20);
-		tFMarca.setText(m.getMarca());
+		tFMarca.setText(motocicleta.getMarca());
 		tFMarca.setEnabled(false);
 		infoPane.add(tFMarca);
 		
@@ -127,7 +128,7 @@ public class ModMoto extends JFrame {
 		
 		tFModelo = new JTextField();
 		tFModelo.setBounds(95, 40, 100, 20);		
-		tFModelo.setText(m.getModelo());
+		tFModelo.setText(motocicleta.getModelo());
 		tFModelo.setEnabled(false);
 		infoPane.add(tFModelo);
 		
@@ -139,7 +140,7 @@ public class ModMoto extends JFrame {
 		
 		tFMatricula = new JTextField();
 		tFMatricula.setBounds(95, 70, 100, 20);
-		tFMatricula.setText(m.getMatricula());
+		tFMatricula.setText(motocicleta.getMatricula());
 		tFMatricula.setEnabled(false);
 		infoPane.add(tFMatricula);
 		
@@ -151,7 +152,7 @@ public class ModMoto extends JFrame {
 		
 		tFFechaMat = new JTextField();
 		tFFechaMat.setBounds(95, 100, 100, 20);
-		tFFechaMat.setText(m.getFechaMatriculacion());
+		tFFechaMat.setText(motocicleta.getFechaMatriculacion());
 		tFFechaMat.setEnabled(false);
 		infoPane.add(tFFechaMat);
 		
@@ -164,7 +165,7 @@ public class ModMoto extends JFrame {
 		tFKms = new JTextField();
 		tFKms.setBounds(95, 130, 100, 20);
 		// Coger los kms que son int
-		String kms = String.valueOf(m.getKilometros());
+		String kms = String.valueOf(motocicleta.getKilometros());
 		tFKms.setText(kms);
 		tFKms.setEnabled(false);
 		infoPane.add(tFKms);
@@ -194,7 +195,8 @@ public class ModMoto extends JFrame {
 		ActionListener modificarGeneral = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
-				//TO-DO
+				//TO-DO - Modificar los datos de la moto en este caso
+				changeData();
 			}
 		};
 		btnModificarGen.addActionListener(modificarGeneral);
@@ -235,11 +237,11 @@ public class ModMoto extends JFrame {
 		//icnMarca = new ImageIcon("pirelli.jpg");
 		lFMarca = new JLabel();
 		lFMarca.setBounds(292, 34, 117, 81);
-		if(m.getMarFrontWheel().equalsIgnoreCase("0")) {
+		if(motocicleta.getMarFrontWheel().equalsIgnoreCase("0")) {
 			lFMarca.setText("Icn Marca");
 			lFMarca.setHorizontalAlignment(SwingConstants.CENTER);
 		} else {
-			icnMarca = new ImageIcon(m.getMarFrontWheel().toLowerCase()+".jpg");
+			icnMarca = new ImageIcon(motocicleta.getMarFrontWheel().toLowerCase()+".jpg");
 			lFMarca.setIcon(new ImageIcon(icnMarca.getImage().getScaledInstance(lFMarca.getWidth(), lFMarca.getHeight(), Image.SCALE_SMOOTH)));
 		}
 		
@@ -257,8 +259,8 @@ public class ModMoto extends JFrame {
 		JTextField tFMarcaFrontWheel = new JTextField();
 		pFrontWheel.add(tFMarcaFrontWheel);
 		tFMarcaFrontWheel.setColumns(10);
-		if(!m.getMarFrontWheel().equals("")) {
-			tFMarcaFrontWheel.setText(m.getMarFrontWheel());
+		if(!motocicleta.getMarFrontWheel().equals("")) {
+			tFMarcaFrontWheel.setText(motocicleta.getMarFrontWheel());
 		}
 		
 		lblModeloFrontWheel = new JLabel("Modelo");
@@ -393,6 +395,10 @@ public class ModMoto extends JFrame {
 			getTFKms().setEnabled(true);
 			getButtonModificarGen().setEnabled(true);
 		}
+	}
+	
+	public void changeData() {
+		
 	}
 	
 	/*
