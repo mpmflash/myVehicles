@@ -130,6 +130,7 @@ public class Window extends JFrame{
 			case 8:
 				break;
 			default:
+				System.err.println("Esta opción no se ha contemplado todavía. Disculpe las molestias");
 				break;
 			}
 		} else {
@@ -155,10 +156,10 @@ public class Window extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				if(listaV.get(0).getTipo().equals("Motocicleta")) {
-					modificarMoto(listaV);
+					modificarMoto();
 				}else if(listaV.get(0).getTipo().equals("Coche")) {
 					// TO-DO con las clases Coche y Camion
-				}else if(listaV.get(0).getTipo().equals("Coche")) {
+				}else if(listaV.get(0).getTipo().equals("Camion")) {
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Esta opción parece que no está contemplada todavía, ponte en contacto con la siguiente dirección de correo y solicítala: mpmflash@gmail.com","Alert",JOptionPane.WARNING_MESSAGE);
@@ -199,8 +200,8 @@ public class Window extends JFrame{
 	 * @param Window (Ventana ppal), ArrayList de Vehiculo
 	 * @return
 	 */
-	private void modificarMoto(ArrayList <Vehiculo> listV) {
-		ModMoto wModMoto = new ModMoto(this, listV.get(0)); // Get(0) porque no tengo más datos, revisar para vehículos variables
+	private void modificarMoto() {
+		ModMoto wModMoto = new ModMoto(this, listaV.get(0), 0); // Get(0) porque no tengo más datos, revisar para vehículos variables
 		wModMoto.setVisible(true);
 	}
 }

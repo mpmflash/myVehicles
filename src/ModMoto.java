@@ -37,6 +37,7 @@ public class ModMoto extends JFrame {
 	//Atributos de la clase
 	private JTabbedPane tabPane;
 	public Moto motocicleta;
+	public int index;
 	
 	// Objetos del panel info
 	private JPanel infoPane;
@@ -83,10 +84,11 @@ public class ModMoto extends JFrame {
 	
 	
 	//Constructores
-	public ModMoto(Window w, Vehiculo v) {
+	public ModMoto(Window w, Vehiculo v, int indice) {
 		// Creamos la moto nueva con el vehículo que viene del programa en ejecución
 		motocicleta = new Moto();
 		motocicleta = (Moto) v;
+		index = indice;
 		// Creación de la ventana
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setBounds(100, 100, 450, 300);
