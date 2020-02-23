@@ -36,7 +36,7 @@ public class ModMoto extends JFrame {
 	
 	//Atributos de la clase
 	private JTabbedPane tabPane;
-	private Moto motocicleta;
+	public Moto motocicleta;
 	
 	// Objetos del panel info
 	private JPanel infoPane;
@@ -224,6 +224,7 @@ public class ModMoto extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
 				w.hideWindow(false);
+				w.listaV.
 				closeWindow();
 			}
 		};
@@ -398,7 +399,12 @@ public class ModMoto extends JFrame {
 	}
 	
 	public void changeData() {
-		
+		motocicleta.setMarca(getTFMarca().getText());
+		motocicleta.setModelo(getTFModelo().getText());
+		motocicleta.setMatricula(getTFMatricula().getText());
+		motocicleta.setFechaMatriculacion(getTFFechaMat().getText());
+		motocicleta.setKilometros(Integer.parseInt(getTFKms().getText()));
+		changeButtons(true);
 	}
 	
 	/*

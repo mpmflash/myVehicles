@@ -200,7 +200,7 @@ public class Window extends JFrame{
 	 * @return
 	 */
 	private void modificarMoto(ArrayList <Vehiculo> listV) {
-		ModMoto wModMoto = new ModMoto(this, listV.get(0));
+		ModMoto wModMoto = new ModMoto(this, listV.get(0)); // Get(0) porque no tengo más datos, revisar para vehículos variables
 		wModMoto.setVisible(true);
 	}
 }
