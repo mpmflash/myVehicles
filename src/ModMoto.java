@@ -224,7 +224,7 @@ public class ModMoto extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
 				w.hideWindow(false);
-				w.listaV.
+				
 				closeWindow();
 			}
 		};
