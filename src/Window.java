@@ -86,6 +86,8 @@ public class Window extends JFrame{
 	private void initBotones() {
 		// Botón para añadir vehiculos
 		JButton bAñadir = new JButton("Añadir vehículo");
+		
+		/*
 		JButton b1Veh = new JButton();
 		JButton b2Veh = new JButton();
 		JButton b3Veh = new JButton();
@@ -169,6 +171,7 @@ public class Window extends JFrame{
 		};
 		b1Veh.addActionListener(modVehicle);
 		//Fin de la acción
+		*/
 		
 	}
 
