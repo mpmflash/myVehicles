@@ -1,6 +1,7 @@
 
 public class Vehiculo {
 	//Atributos
+	protected int id; // Ir sumando números para identificar los vehículos
 	protected String tipo; // Coche, Moto, Camion
 	protected String marca;
 	protected String modelo;
@@ -10,6 +11,13 @@ public class Vehiculo {
 	protected int kilometros;
 	
 	//Getters y Setters
+	public int getId() {
+		return id;
+	}
+	public void setId() {
+		
+	}
+	
 	public String getTipo() {
 		return tipo;
 	}

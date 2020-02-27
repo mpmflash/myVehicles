@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Window extends JFrame{
 	public Font txtNegrita = new Font("Calibri", Font.BOLD, 15);
 	//public ArrayList<Vehiculo> listaV;
 	public ArrayList<Vehiculo> listaV;
+	public ArrayList<JButton> vehEnBotones;
 	
 	public Window() {
 		// ** Métodos interesantes:
@@ -28,6 +30,7 @@ public class Window extends JFrame{
 		this.setLocationRelativeTo(null); // Esto hace que se centre la ventana
 		// Inicializamos la lista porque sino, no existe todavía y nos da error
 		listaV = new ArrayList<Vehiculo>();
+		vehEnBotones = new ArrayList<JButton>();
 		// Creamos una moto para hacer pruebas --------------- deshabilitar cuando el programa funcione
 		Moto m = new Moto("Yamaha","R1","0433JSB","01/08/2016","Gasolina",40000);
 		listaV.add(m);
@@ -86,7 +89,35 @@ public class Window extends JFrame{
 	private void initBotones() {
 		// Botón para añadir vehiculos
 		JButton bAñadir = new JButton("Añadir vehículo");
-		
+		/**/
+		if(!listaV.isEmpty()) {
+			for(int i=0; i<listaV.size(); i++) {
+				// Creamos un botón por cada vehículo agregado en la ArrayList y lo guardamos en una ArrayList de botones
+				JButton boton = new JButton( listaV.get(i).getTipo() + ": " + listaV.get(i).getMatricula() );
+				// Con setName identificaré el botón con el vehículo que le haya agregado
+				boton.setName("");
+				boton.setFont(txtNormal);
+				boton.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TO - DO Abrir nueva ventana (clase) para modificar el vehículo seleccionado
+						for( JButton boton : vehEnBotones) {
+							if( boton == e.getSource() ) {
+								//mostrarHermano(r.searchHermanoById(Integer.parseInt(boton.getName())));
+								modificarMoto();
+							}
+						}
+					}
+				});
+				// Agregamos el botón en la ArrayList de botones
+				vehEnBotones.add(boton);
+				// Agregamos el botón al panel
+				panel.add(boton);
+			}
+		} else {
+			System.out.println("Todavía no hay ningún vehículo en la app");
+		}
+		/**/
 		/*
 		JButton b1Veh = new JButton();
 		JButton b2Veh = new JButton();
