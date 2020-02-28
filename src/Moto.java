@@ -23,6 +23,7 @@ public class Moto extends Vehiculo{
 	}
 	// Constructor al que se le pasan todos los datos de la super-clase -- Este constructor es el que ejecuta el programa por defecto
 	public Moto(String mar, String mod, String mat, String fechaMat, String tipoMot, int kms) {
+		//super.id = 1;
 		super.tipo = "Motocicleta";
 		super.marca = mar;
 		super.modelo = mod;

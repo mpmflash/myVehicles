@@ -14,8 +14,8 @@ public class Vehiculo {
 	public int getId() {
 		return id;
 	}
-	public void setId() {
-		
+	public void setId(int i) {
+		this.id = i;
 	}
 	
 	public String getTipo() {
@@ -24,6 +24,7 @@ public class Vehiculo {
 	public void setTipo(String t) {
 		this.tipo = t;
 	}
+	
 	public String getMarca() {
 		return marca;
 	}

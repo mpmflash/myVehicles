@@ -34,6 +34,7 @@ public class Window extends JFrame{
 		// Creamos una moto para hacer pruebas --------------- deshabilitar cuando el programa funcione
 		Moto m = new Moto("Yamaha","R1","0433JSB","01/08/2016","Gasolina",40000);
 		listaV.add(m);
+		m.setId(listaV.size());
 		// Hasta aquí la declaración de vehículos de prueba
 		initComponentes();
 	}
@@ -95,7 +96,7 @@ public class Window extends JFrame{
 				// Creamos un botón por cada vehículo agregado en la ArrayList y lo guardamos en una ArrayList de botones
 				JButton boton = new JButton( listaV.get(i).getTipo() + ": " + listaV.get(i).getMatricula() );
 				// Con setName identificaré el botón con el vehículo que le haya agregado
-				boton.setName("");
+				boton.setName( String.valueOf(listaV.get(i).getId()) );
 				boton.setFont(txtNormal);
 				boton.addActionListener(new ActionListener() {
 					@Override
@@ -103,8 +104,7 @@ public class Window extends JFrame{
 						// TO - DO Abrir nueva ventana (clase) para modificar el vehículo seleccionado
 						for( JButton boton : vehEnBotones) {
 							if( boton == e.getSource() ) {
-								//mostrarHermano(r.searchHermanoById(Integer.parseInt(boton.getName())));
-								modificarMoto();
+								modificarMoto(Integer.parseInt(boton.getName()));
 							}
 						}
 					}
@@ -231,11 +231,26 @@ public class Window extends JFrame{
 	/*
 	 * modificarMoto();
 	 * Nos abre la ventana ModMoto para modificar la moto que ha seleccionado el usuario
-	 * @param Window (Ventana ppal), ArrayList de Vehiculo
+	 * @param Window (Ventana ppal), ArrayList de Vehiculo, ID del vehículo
 	 * @return
 	 */
-	private void modificarMoto() {
-		ModMoto wModMoto = new ModMoto(this, listaV.get(0), 0); // Get(0) porque no tengo más datos, revisar para vehículos variables
+	private void modificarMoto(int id) {
+		ModMoto wModMoto = new ModMoto(this, listaV.get(id), id);
 		wModMoto.setVisible(true);
+	}
+	/*
+	 * searchVehiculoById();
+	 * Método que nos devuelve la posición del vehículo en la listaV con el ID que le pasamos
+	 * @param int id - Le pasamos el ID del vehículo
+	 * @return int - Posición en la lista
+	 */
+	private int searchVehiculoById(int id) {
+		int pos = 0;
+		for (int i=0; i<listaV.size(); i++ ) {
+			if (listaV.get(i).getId() == id) {
+				pos = i;
+			}
+		}
+		return pos;
 	}
 }
