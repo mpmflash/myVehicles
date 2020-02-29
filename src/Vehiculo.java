@@ -10,6 +10,10 @@ public class Vehiculo {
 	protected String tipoMotor;
 	protected int kilometros;
 	
+	//Constructor vacío
+	public Vehiculo() {
+		
+	}
 	//Getters y Setters
 	public int getId() {
 		return id;

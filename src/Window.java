@@ -112,6 +112,7 @@ public class Window extends JFrame{
 				// Agregamos el botón en la ArrayList de botones
 				vehEnBotones.add(boton);
 				// Agregamos el botón al panel
+				boton.setBounds(10, 40, 180, 30);
 				panel.add(boton);
 			}
 		} else {
@@ -119,91 +120,10 @@ public class Window extends JFrame{
 		}
 		/**/
 		/*
-		JButton b1Veh = new JButton();
-		JButton b2Veh = new JButton();
-		JButton b3Veh = new JButton();
-		JButton b4Veh = new JButton();
-		JButton b5Veh = new JButton();
-		JButton b6Veh = new JButton();
-		JButton b7Veh = new JButton();
-		JButton b8Veh = new JButton();
-		if(!listaV.isEmpty()) {
-			//for(int i=0; i<=listaV.size(); i++) {
-				
-			//}
-			switch(listaV.size()) {
-			case 1:
-				b1Veh.setBounds(10, 40, 180, 30);
-				b1Veh.setText(listaV.get(0).getTipo() + ": " + listaV.get(0).getMatricula());
-				b1Veh.setFont(txtNormal);
-				panel.add(b1Veh);
-				bAñadir.setBounds(10, 80, 180, 30);
-				break;
-			case 2: 
-				b1Veh.setBounds(10, 40, 180, 30);
-				b1Veh.setText(listaV.get(0).getTipo() + ": " + listaV.get(0).getMatricula());
-				b1Veh.setFont(txtNormal);
-				panel.add(b1Veh);
-				b2Veh.setBounds(10, 80, 180, 30);
-				b2Veh.setText(listaV.get(1).getTipo() + ": " + listaV.get(1).getMatricula());
-				b2Veh.setFont(txtNormal);
-				panel.add(b2Veh);
-				bAñadir.setBounds(10, 120, 180, 30);
-				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			case 6:
-				break;
-			case 7:
-				break;
-			case 8:
-				break;
-			default:
-				System.err.println("Esta opción no se ha contemplado todavía. Disculpe las molestias");
-				break;
-			}
-		} else {
-			bAñadir.setBounds(10, 50, 180, 30);
-		}
 		bAñadir.setMnemonic('a'); // Al pulsar Alt + 'letra' clickearás el botón
 		bAñadir.setFont(txtNormal);
 		panel.add(bAñadir);
-		
-		// Agregamos acción al botón AÑADIR
-		ActionListener abrirVentana = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				AddVehicle wAñadir = new AddVehicle(listaV);
-				wAñadir.setVisible(true);
-				closeWindow();
-			}
-		};
-		bAñadir.addActionListener(abrirVentana);
-		
-		//Agregamos acción al botón modificar vehículo
-		ActionListener modVehicle = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent ae){
-				if(listaV.get(0).getTipo().equals("Motocicleta")) {
-					modificarMoto();
-				}else if(listaV.get(0).getTipo().equals("Coche")) {
-					// TO-DO con las clases Coche y Camion
-				}else if(listaV.get(0).getTipo().equals("Camion")) {
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "Esta opción parece que no está contemplada todavía, ponte en contacto con la siguiente dirección de correo y solicítala: mpmflash@gmail.com","Alert",JOptionPane.WARNING_MESSAGE);
-				}
-				hideWindow(true);
-			}
-		};
-		b1Veh.addActionListener(modVehicle);
-		//Fin de la acción
 		*/
-		
 	}
 
 	/*
@@ -235,7 +155,7 @@ public class Window extends JFrame{
 	 * @return
 	 */
 	private void modificarMoto(int id) {
-		ModMoto wModMoto = new ModMoto(this, listaV.get(id), id);
+		ModMoto wModMoto = new ModMoto(this, searchVehiculoById(id), id);
 		wModMoto.setVisible(true);
 	}
 	/*
@@ -244,13 +164,13 @@ public class Window extends JFrame{
 	 * @param int id - Le pasamos el ID del vehículo
 	 * @return int - Posición en la lista
 	 */
-	private int searchVehiculoById(int id) {
-		int pos = 0;
+	private Vehiculo searchVehiculoById(int id) {
+		Vehiculo veh = new Vehiculo();
 		for (int i=0; i<listaV.size(); i++ ) {
 			if (listaV.get(i).getId() == id) {
-				pos = i;
+				veh = listaV.get(i);
 			}
 		}
-		return pos;
+		return veh;
 	}
 }

@@ -88,7 +88,7 @@ public class ModMoto extends JFrame {
 		// Creamos la moto nueva con el vehículo que viene del programa en ejecución
 		motocicleta = new Moto();
 		motocicleta = (Moto) v;
-		index = indice;
+		motocicleta.setId(indice);
 		// Creación de la ventana
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setBounds(100, 100, 450, 300);
