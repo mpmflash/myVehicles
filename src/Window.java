@@ -90,7 +90,8 @@ public class Window extends JFrame{
 	private void initBotones() {
 		// Botón para añadir vehiculos
 		JButton bAñadir = new JButton("Añadir vehículo");
-		/**/
+		bAñadir.setBounds(10, (1+listaV.size())*40, 180, 30);
+		
 		if(!listaV.isEmpty()) {
 			for(int i=0; i<listaV.size(); i++) {
 				// Creamos un botón por cada vehículo agregado en la ArrayList y lo guardamos en una ArrayList de botones
@@ -112,18 +113,16 @@ public class Window extends JFrame{
 				// Agregamos el botón en la ArrayList de botones
 				vehEnBotones.add(boton);
 				// Agregamos el botón al panel
-				boton.setBounds(10, 40, 180, 30);
+				boton.setBounds(10, (1+i)*40, 180, 30);
 				panel.add(boton);
 			}
 		} else {
 			System.out.println("Todavía no hay ningún vehículo en la app");
 		}
-		/**/
-		/*
+		
 		bAñadir.setMnemonic('a'); // Al pulsar Alt + 'letra' clickearás el botón
 		bAñadir.setFont(txtNormal);
 		panel.add(bAñadir);
-		*/
 	}
 
 	/*
