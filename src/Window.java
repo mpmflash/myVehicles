@@ -88,8 +88,9 @@ public class Window extends JFrame{
 		}
 	
 	private void initBotones() {
-		vehEnBotones.clear();
+		//vehEnBotones.clear();
 		vehEnBotones = new ArrayList<JButton>();
+		vehEnBotones.clear();
 		// Botón para añadir vehiculos
 		JButton bAnadir = new JButton("Añadir vehículo");
 		bAnadir.setBounds(10, (1+listaV.size())*40, 180, 30);
