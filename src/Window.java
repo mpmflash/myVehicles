@@ -88,9 +88,11 @@ public class Window extends JFrame{
 		}
 	
 	private void initBotones() {
+		vehEnBotones.clear();
+		vehEnBotones = new ArrayList<JButton>();
 		// Botón para añadir vehiculos
-		JButton bAñadir = new JButton("Añadir vehículo");
-		bAñadir.setBounds(10, (1+listaV.size())*40, 180, 30);
+		JButton bAnadir = new JButton("Añadir vehículo");
+		bAnadir.setBounds(10, (1+listaV.size())*40, 180, 30);
 		
 		if(!listaV.isEmpty()) {
 			for(int i=0; i<listaV.size(); i++) {
@@ -120,9 +122,17 @@ public class Window extends JFrame{
 			System.out.println("Todavía no hay ningún vehículo en la app");
 		}
 		
-		bAñadir.setMnemonic('a'); // Al pulsar Alt + 'letra' clickearás el botón
-		bAñadir.setFont(txtNormal);
-		panel.add(bAñadir);
+		bAnadir.setMnemonic('a'); // Al pulsar Alt + 'letra' clickearás el botón
+		bAnadir.setFont(txtNormal);
+		bAnadir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AddVehicle nuevoVehiculo = new AddVehicle(listaV);
+				nuevoVehiculo.setVisible(true);
+			}
+			
+		});
+		panel.add(bAnadir);
 	}
 
 	/*
