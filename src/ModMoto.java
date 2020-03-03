@@ -262,9 +262,9 @@ public class ModMoto extends JFrame {
 		JTextField tFMarcaFrontWheel = new JTextField();
 		pFrontWheel.add(tFMarcaFrontWheel);
 		tFMarcaFrontWheel.setColumns(10);
-		if(!motocicleta.getMarFrontWheel().equals("")) {
+		//if(!motocicleta.getMarFrontWheel().equals("")) {
 			tFMarcaFrontWheel.setText(motocicleta.getMarFrontWheel());
-		}
+		//}
 		
 		lblModeloFrontWheel = new JLabel("Modelo");
 		pFrontWheel.add(lblModeloFrontWheel);
@@ -272,6 +272,9 @@ public class ModMoto extends JFrame {
 		JTextField tFModeloFrontWheel= new JTextField();
 		pFrontWheel.add(tFModeloFrontWheel);
 		tFModeloFrontWheel.setColumns(10);
+		//if(!motocicleta.getModFrontWheel().equals("")) {
+			tFModeloFrontWheel.setText(motocicleta.getModFrontWheel());
+		//}
 		
 		lblPrecioFW = new JLabel("Precio");
 		pFrontWheel.add(lblPrecioFW);
@@ -279,6 +282,9 @@ public class ModMoto extends JFrame {
 		tFPrecioFW = new JTextField();
 		pFrontWheel.add(tFPrecioFW);
 		tFPrecioFW.setColumns(10);
+		//if(motocicleta.getPrecioFrontWheel() == 0) {
+			tFPrecioFW.setText(String.valueOf(motocicleta.getPrecioFrontWheel()));
+		//}
 		
 		//Panel para organizar las diferentes ruedas (este para la trasera) y crearle el borde divisorio
 		JPanel pRearWheel = new JPanel();

@@ -70,6 +70,20 @@ public class Moto extends Vehiculo{
 		this.modFrontWheel = modFrontWheel;
 	}
 	
+	public String getTamanyoFrontWheel() {
+		return tamanyoFrontWheel;
+	}
+	public void setTamanyoFrontWheel(String medidas) {
+		this.tamanyoFrontWheel = medidas;
+	}
+	
+	public int getPrecioFrontWheel() {
+		return this.ultPrecioFrontWheel;
+	}
+	public void setPrecioFrontWheel(int precio) {
+		this.ultPrecioFrontWheel = precio;
+	}
+	
 	public String getMarRearWheel() {
 		return marRearWheel;
 	}
@@ -82,6 +96,20 @@ public class Moto extends Vehiculo{
 	}
 	public void setModRearWheel(String modRearWheel) {
 		this.modRearWheel = modRearWheel;
+	}
+	
+	public String getTamanyoRearWheel() {
+		return tamanyoRearWheel;
+	}
+	public void setTamanyoRearWheel(String medidas) {
+		this.tamanyoRearWheel = medidas;
+	}
+	
+	public int getPrecioRearWheel() {
+		return this.ultPrecioRearWheel;
+	}
+	public void setPrecioRearWheel(int precio) {
+		this.ultPrecioRearWheel = precio;
 	}
 	
 	public String getModTuboEscape() {
