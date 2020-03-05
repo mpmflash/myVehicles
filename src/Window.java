@@ -108,7 +108,20 @@ public class Window extends JFrame{
 						// TO - DO Abrir nueva ventana (clase) para modificar el vehículo seleccionado
 						for( JButton boton : vehEnBotones) {
 							if( boton == e.getSource() ) {
-								modificarMoto(Integer.parseInt(boton.getName()));
+								switch(searchVehiculoById( Integer.parseInt(boton.getName())).getTipo()) {
+								case "Motocicleta":
+									modificarMoto(Integer.parseInt(boton.getName()));
+									break;
+								case "Coche":
+									System.out.println("Quieres modificar un coche");
+									break;
+								case "Camion":
+									System.out.println("Quieres modificar un camión");
+									break;
+								default:
+									break;
+								}
+								
 							}
 						}
 					}

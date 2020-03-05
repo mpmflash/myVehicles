@@ -16,7 +16,8 @@ public class Moto extends Vehiculo{
 	public Moto() {
 		super.tipo = "Motocicleta";
 	}
-	public Moto(String mar, String mod) {
+	public Moto(int newId, String mar, String mod) {
+		super.id = newId;
 		super.tipo = "Motocicleta";
 		super.marca = mar;
 		super.modelo = mod;

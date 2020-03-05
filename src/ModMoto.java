@@ -158,7 +158,7 @@ public class ModMoto extends JFrame {
 		tFFechaMat.setEnabled(false);
 		infoPane.add(tFFechaMat);
 		
-		lblKilometros = new JLabel("Kil\u00F3metros:");
+		lblKilometros = new JLabel("Kilómetros:");
 		lblKilometros.setFont(txtNormal);
 		lblKilometros.setHorizontalAlignment(SwingConstants.CENTER);
 		lblKilometros.setBounds(10, 130, 80, 20);

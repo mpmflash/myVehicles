@@ -165,9 +165,7 @@ public class AddVehicle extends JFrame{
 				listaV.add(newCoche);
 				
 			} else if(rBMoto.isSelected()) {
-				Moto newMoto = new Moto();
-				newMoto.setMarca(tFMarca.getText());
-				newMoto.setModelo(tFModelo.getText());
+				Moto newMoto = new Moto(listaV.size()+1, tFMarca.getText(), tFModelo.getText());
 				newMoto.setMatricula(tFMatricula.getText());
 				newMoto.setFechaMatriculacion(tFFechaM.getText());
 				newMoto.setKilometros(Integer.parseInt(tFKms.getText()));
