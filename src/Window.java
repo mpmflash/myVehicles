@@ -64,6 +64,38 @@ public class Window extends JFrame{
 		//panel.setBackground(Color.GREEN); // Le ponemos color al panel
 		panel.setLayout(null); // Desactivamos el diseño por defecto
 		this.getContentPane().add(panel); // Agregamos a la ventana el panel que acabamos de crear
+		
+		// Creación del menú barra Archivo...
+		JMenuBar menuBarra = new JMenuBar();
+		JMenu menu = new JMenu("Archivo...");
+		JMenuItem mIGuardar = new JMenuItem("Guardar datos");
+		mIGuardar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// Guardar fichero de archivo de datos de vehículos
+				//firstSaveToFile();
+			}
+		});
+		JMenuItem mICargar = new JMenuItem("Cargar datos");
+		mICargar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				// TO - DO Cargar fichero de datos de vehículos
+				//loadSelectedFile();
+			}
+		});
+		this.setJMenuBar(menuBarra);
+		JMenuItem mIAyuda = new JMenuItem("Ayuda");
+		mIAyuda.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				JOptionPane.showMessageDialog(null, "Si tienes cualquier duda o pregunta, ponte en contacto vía e-mail con: mpmflash@gmail.com (Miquel Pérez)");
+			}
+		});
+		menuBarra.add(menu);
+		menu.add(mIGuardar);
+		menu.add(mICargar);
+		menu.add(mIAyuda);
 	}
 	
 	private void initEtiquetas() {
@@ -119,6 +151,7 @@ public class Window extends JFrame{
 									System.out.println("Quieres modificar un camión");
 									break;
 								default:
+									System.out.println("Este tipo de vehículo no está implementado todavía, solicítalo escribiendo un email a mpmflash@gmail.com");
 									break;
 								}
 								
