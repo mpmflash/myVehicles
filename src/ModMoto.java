@@ -197,7 +197,6 @@ public class ModMoto extends JFrame {
 		ActionListener modificarGeneral = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
-				//TO-DO - Modificar los datos de la moto en este caso
 				changeData();
 			}
 		};
@@ -226,7 +225,6 @@ public class ModMoto extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
 				w.hideWindow(false);
-				
 				closeWindow();
 			}
 		};

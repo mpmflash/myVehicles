@@ -137,7 +137,6 @@ public class Window extends JFrame{
 				boton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TO - DO Abrir nueva ventana (clase) para modificar el vehículo seleccionado
 						for( JButton boton : vehEnBotones) {
 							if( boton == e.getSource() ) {
 								switch(searchVehiculoById( Integer.parseInt(boton.getName())).getTipo()) {
@@ -145,9 +144,11 @@ public class Window extends JFrame{
 									modificarMoto(Integer.parseInt(boton.getName()));
 									break;
 								case "Coche":
+									//TO-DO
 									System.out.println("Quieres modificar un coche");
 									break;
 								case "Camion":
+									//TO-DO
 									System.out.println("Quieres modificar un camión");
 									break;
 								default:
