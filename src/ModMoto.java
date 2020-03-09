@@ -296,6 +296,7 @@ public class ModMoto extends JFrame {
 		JTextField tFMarcaRearWheel = new JTextField();
 		pRearWheel.add(tFMarcaRearWheel);
 		tFMarcaRearWheel.setColumns(10);
+		tFMarcaRearWheel.setText(motocicleta.getMarRearWheel());
 		
 		lblModeloRearWheel = new JLabel("Modelo");
 		pRearWheel.add(lblModeloRearWheel);
@@ -303,6 +304,7 @@ public class ModMoto extends JFrame {
 		JTextField tFModeloRearWheel= new JTextField();
 		pRearWheel.add(tFModeloRearWheel);
 		tFModeloRearWheel.setColumns(10);
+		tFModeloRearWheel.setText(motocicleta.getModRearWheel());
 		
 		lblPrecioRW = new JLabel("Precio");
 		pRearWheel.add(lblPrecioRW);
@@ -310,6 +312,7 @@ public class ModMoto extends JFrame {
 		tFPrecioRW = new JTextField();
 		pRearWheel.add(tFPrecioRW);
 		tFPrecioRW.setColumns(10);
+		tFPrecioRW.setText(String.valueOf(motocicleta.getPrecioRearWheel()));
 		
 		JButton btnChangeWheel = new JButton("Modificar");
 		btnChangeWheel.setBounds(302, 155, 92, 23);
