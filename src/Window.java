@@ -80,7 +80,7 @@ public class Window extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// Guardar fichero de archivo de datos de vehículos
-				//firstSaveToFile();
+				firstSaveToFile();
 			}
 		});
 		JMenuItem mICargar = new JMenuItem("Cargar datos");
@@ -88,7 +88,7 @@ public class Window extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent ae) {
 				// TO - DO Cargar fichero de datos de vehículos
-				//loadSelectedFile();
+				loadSelectedFile();
 			}
 		});
 		this.setJMenuBar(menuBarra);
