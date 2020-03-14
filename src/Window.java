@@ -247,7 +247,7 @@ public class Window extends JFrame{
 	 */
 	public void firstSaveToFile() {
 		try {
-			FileOutputStream file = new FileOutputStream("ListadoDePersonal.bin");
+			FileOutputStream file = new FileOutputStream("ListadoDeVehiculos.bin");
 			ObjectOutputStream objectToFile = new ObjectOutputStream(file);
 			for( Vehiculo v : listaV) {
 				objectToFile.writeObject(v);
