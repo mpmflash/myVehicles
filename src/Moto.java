@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Moto extends Vehiculo{
+public class Moto extends Vehiculo implements Serializable{
 	//Atributos de la clase moto
 	private String marFrontWheel;
 	private String modFrontWheel;
