@@ -4,6 +4,13 @@ import java.awt.Image;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -229,5 +236,63 @@ public class Window extends JFrame{
 			}
 		}
 		return veh;
+	}
+	
+	/*
+	 * firstSaveToFile();
+	 * Método que se tiene que usar la primera vez que se guardan datos binarios en un fichero. Así que al crear la lista de Hnos, la guardaremos.
+	 * Para siguientes actualizaciones del fichero, usaremos el método saveToFile();
+	 * @param void
+	 * @return void
+	 */
+	public void firstSaveToFile() {
+		try {
+			FileOutputStream file = new FileOutputStream("ListadoDePersonal.bin");
+			ObjectOutputStream objectToFile = new ObjectOutputStream(file);
+			for( Vehiculo v : listaV) {
+				objectToFile.writeObject(v);
+			}
+			System.out.println("El archivo se ha guardado correctamente");
+			file.close();
+		} catch(FileNotFoundException fnfE) {
+			System.err.println("Error: "+fnfE);
+		} catch(IOException ioE) {
+			System.err.println("Error: "+ioE);
+		}
+	}
+	
+	/*
+	 * loadSelectedFile();
+	 * Método que carga el fichero para trabajar con los datos deseados
+	 * @param void
+	 * @return void
+	 */
+	public void loadSelectedFile() {
+		int resp;
+		JFileChooser file = new JFileChooser();
+		file.showOpenDialog(this);
+		changeDataToWork( String.valueOf( file.getSelectedFile() ) );
+	}
+	
+	public void changeDataToWork(String fileName) {
+		boolean bucleWhile = true;
+		try {
+			FileInputStream file = new FileInputStream(fileName);
+			ObjectInputStream objectToRead = new ObjectInputStream(file);
+			listaV.clear();
+			while(bucleWhile) {
+				Vehiculo v = (Vehiculo) objectToRead.readObject();
+				listaV.add(v);
+			}
+			//repartirPrivilegios();
+		} catch(EOFException eOFE) {
+				bucleWhile = false; // Cuando haya terminado de leer el fichero saldremos del while infinito
+		} catch (FileNotFoundException fNFE) {
+			System.err.println("Error al encontrar el archivo:"+fNFE);
+		} catch (IOException iOE) {
+			System.err.println("Error de entrada/salida de datos: "+iOE);
+		} catch (ClassNotFoundException cNFE) {
+			System.err.println("Error, no se encuentra la clase: "+cNFE);
+		}
 	}
 }
