@@ -274,6 +274,12 @@ public class Window extends JFrame{
 		changeDataToWork( String.valueOf( file.getSelectedFile() ) );
 	}
 	
+	/*
+	 * changeDataToWork();
+	 * Método que carga los datos del fichero de datos a la ArrayList de vehículos para poder continuar con los datos
+	 * @param String fileName (nombre del fichero)
+	 * @return void
+	 */
 	public void changeDataToWork(String fileName) {
 		boolean bucleWhile = true;
 		try {
